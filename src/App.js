@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+
+import Homepage from './Homepage';
+import Music from './Music';
+
 import './App.css';
 
 function App() {
+  const navigate = useNavigate()
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Homepage />}/>
+        <Route path="/music" element={<Music />} />
+      </Routes>
+        <div>
+          <nav>
+            <h3 onClick={navigate('/')}>Home</h3>
+            <h3 onClick={navigate('/music')}>Music</h3>
+            {/* {<h3 onClick={navigate('/about')}>About</h3>} */}
+          </nav>
+        </div>
     </div>
   );
 }
