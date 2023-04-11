@@ -1,0 +1,11 @@
+.details {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+p {
+    font-size: larger;
+    max-width: 40%;
+    align-self: center;
+}
